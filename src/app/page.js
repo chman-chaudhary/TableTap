@@ -1,3 +1,9 @@
+import Auth from "./components/Auth";
+
 export default function Home() {
-  return <div className="text-7xl underline">Hello</div>;
+  return (
+    <>
+      <h1>Hello</h1>
+    </>
+  );
 }
