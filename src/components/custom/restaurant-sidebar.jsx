@@ -20,6 +20,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { FaHistory, FaHotel } from "react-icons/fa";
+import { MdLocalGroceryStore } from "react-icons/md";
+import { TbCategoryPlus } from "react-icons/tb";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 // Menu items.
@@ -119,7 +121,7 @@ export function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <span>
-                    <FaHistory />
+                    <TbCategoryPlus />
                     Categories & Specials
                   </span>
                 </SidebarMenuButton>
@@ -127,7 +129,7 @@ export function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <span>
-                    <FaHistory />
+                    <MdLocalGroceryStore />
                     Item Availability
                   </span>
                 </SidebarMenuButton>

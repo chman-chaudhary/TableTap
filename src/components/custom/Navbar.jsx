@@ -5,7 +5,7 @@ import { LoginButton } from "./LoginButton";
 
 const Navbar = () => {
   return (
-    <div className="w-full text-3xl py-3 px-5 flex justify-between items-center z-50 backdrop-blur-md fixed">
+    <div className="w-full text-3xl py-3 px-5 flex justify-between items-center z-50 backdrop-blur-md fixed border-b-[0.5px] border-gray-400/60">
       <Link className="font-bold" href="/">
         TableTap
       </Link>

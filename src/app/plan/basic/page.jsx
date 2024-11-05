@@ -1,3 +1,5 @@
+"use client";
+
 import { PaymentButton } from "@/components/custom/PaymentButton";
 import {
   Card,
@@ -7,8 +9,15 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { redirect } from "next/navigation";
 
 const BasicPlan = () => {
+  const payment = () => {
+    // Payment logic here
+    alert("Payment Successful ✔");
+    redirect("/restaurant/1");
+  };
+
   return (
     <div className="flex justify-center items-center h-screen">
       <Card className="max-w-sm mx-auto shadow-md">
@@ -38,7 +47,7 @@ const BasicPlan = () => {
           </div>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <PaymentButton price="9.98" link="#" />
+          <PaymentButton price="9.98" onClick={payment} />
         </CardFooter>
       </Card>
     </div>

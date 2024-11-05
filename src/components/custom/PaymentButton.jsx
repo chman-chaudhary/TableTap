@@ -1,15 +1,10 @@
 "use client";
 
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
-export const PaymentButton = ({ link, price }) => {
+export const PaymentButton = ({ price, onClick }) => {
   return (
-    <Button
-      variant="default"
-      size="lg"
-      className="w-full"
-      onClick={() => alert("Payment Successful")}
-    >
+    <Button variant="default" size="lg" className="w-full" onClick={onClick}>
       Pay ${price}
     </Button>
   );
