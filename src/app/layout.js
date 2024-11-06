@@ -1,7 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { AuthProvider } from "@/lib/firebase/auth";
-import { DatabaseProvider } from "@/lib/firebase/database";
 import Navbar from "@/components/custom/Navbar";
 import ThemeProvider from "@/components/ui/ThemeProvider";
 
@@ -33,12 +32,10 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <DatabaseProvider>
-            <AuthProvider>
-              <Navbar />
-              {children}
-            </AuthProvider>
-          </DatabaseProvider>
+          <AuthProvider>
+            <Navbar />
+            {children}
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

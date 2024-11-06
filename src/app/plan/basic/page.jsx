@@ -9,13 +9,41 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { useAuth } from "@/lib/firebase/auth";
 import { redirect } from "next/navigation";
+import {
+  collection,
+  addDoc,
+  doc,
+  getDoc,
+  query,
+  where,
+  getDocs,
+} from "firebase/firestore";
+import { database } from "@/lib/firebase/firebase";
 
 const BasicPlan = () => {
+  const { user } = useAuth();
+
+  const AddOwner = async () => {
+    // const owner = await addDoc(collection(database, "owner"), {
+    //   id: user.uid,
+    //   name: user.displayName,
+    //   email: user.email,
+    //   photo: user.photoURL,
+    // });
+    // console.log(owner);
+    const ownerRef = collection(database, "owner");
+    const q = query(ownerRef, where("id", "==", user.uid));
+    const querySnapShot = await getDocs(q);
+    console.log(querySnapShot.docs[0].data());
+  };
+
   const payment = () => {
     // Payment logic here
     alert("Payment Successful ✔");
-    redirect("/restaurant/1");
+    AddOwner();
+    // redirect("/restaurant/1");
   };
 
   return (
